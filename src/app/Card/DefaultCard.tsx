@@ -5,10 +5,10 @@ const karla = Caveat({ subsets: ['latin'] });
 
 const DefaultCard = ({ index }: { index: number }) => {
     const transformations = [
-        "-rotate-[4deg] -translate-x-4",
-        "-rotate-[8deg] -translate-x-8",
-        "rotate-[4deg] translate-x-4",
-        "rotate-[8deg] translate-x-8",
+        "-rotate-[8deg] -translate-x-12",
+        "-rotate-[16deg] -translate-x-24",
+        "rotate-[8deg] translate-x-12",
+        "rotate-[16deg] translate-x-24",
     ]
 
     return (
