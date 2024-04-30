@@ -19,10 +19,9 @@ const Card = ({ card, generateNewCard, setTopIndex, topIndex, topDeck }:
     //     "rotate-[16deg] translate-x-24",
     // ]
 
-    const discardedStyles = `translate-y-full scale-50 hover:scale-25 sm:hover:z-50 ${topIndex === card.index + 1 ? `shadow-xl` : ''}`
+    const discardedStyles = `translate-y-full scale-50 hover:scale-25 sm:hover:z-50 ${topIndex - 1=== card?.index ? `shadow-xl` : ''}`
 
     const handleClick = () => {
-        console.log({ cardIndex: card.index, top: topIndex });
         if (!discarded) {
             generateNewCard()
             setDiscarded(true);
@@ -38,7 +37,7 @@ const Card = ({ card, generateNewCard, setTopIndex, topIndex, topDeck }:
         <div onClick={handleClick} className={`${karla.className} w-100 sm:m-0 sm:hover:scale-105 ${!discarded && topIndex == card.index ? 'shadow-md' : 'shadow-none'} ${discarded ? discardedStyles : ''} bg-gradient-to-b from-teal-400 to-teal-700 h-80 sm:h-80 w-full md:w-1/2 p-[24px] sm:p-[3%] lg:p-8 max-w-[500px] rounded-md cursor-pointer duration-200 ease-in-out  shadow-teal-900 sm:hover:shadow-2xl sm:hover:shadow-teal-900 select-none z-50 absolute`}>
             <div className="flex flex-col w-full bg-stone-100 h-full p-8 pb-4 rounded-md border-4 border-teal-700 selection:bg-teal-500 selection:text-white">
                 <div className="flex flex-col justify-center grow w-100">
-                    <div className="text-center text-teal-700 text-md md:text-lg font-extralight leading-tight">
+                    <div className="text-center text-teal-700 text-lg font-extralight leading-tight">
                         {question}
                     </div>
 
