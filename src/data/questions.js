@@ -186,7 +186,7 @@ const questions = [
         "note": ""
     },
     {
-        "question": "what emotion do you have the most difficulty expressing or handling?",
+        "question": "What emotion do you have the most difficulty expressing or handling?",
         "level": 2,
         "note": ""
     },

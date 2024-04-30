@@ -26,7 +26,7 @@ const CardContainer = () => {
     const [topIndex, setTopIndex] = useState(0);
 
     return (
-        <div className="p-4 sm:p-0">
+        <div className="p-4 sm:p-0 mt-8">
             <div className="w-100 flex justify-center relative ">
                 {/* <DefaultCard index={0} />
         <DefaultCard index={1} />
