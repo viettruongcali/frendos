@@ -50,7 +50,6 @@ const Card = ({ card, generateNewCard, setTopIndex, topIndex, topDeck }:
                     <span className="text-teal-700 text-xs border-t-2 border-teal-600 px-1 text-center">
                         Level {level}
                     </span>
-
                 </div>
             </div>
         </div>)

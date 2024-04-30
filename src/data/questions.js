@@ -63,7 +63,7 @@ const questions = [
     {
         "question": "Who are your role models?",
         "level": 2,
-        "note": ""
+        "note": "1 Cor 11:1 Be imitators of me, as I am of Christ"
     },
     {
         "question": "What do you daydream about?",
