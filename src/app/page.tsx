@@ -1,11 +1,23 @@
-import { Grandstander } from 'next/font/google';
+'use client';
+import { Raleway } from 'next/font/google';
 import CardContainer from "./Card/CardContainer";
-const karla = Grandstander({ subsets: ['latin'] });
+import LevelButton from './LevelButton/LevelButton';
+import { useState } from 'react';
+const karla = Raleway({ subsets: ['latin'] });
 
 export default function Home() {
+  const [filters, setFilters] = useState([false, false, false, false]);
+
   return (
     <main className="min-h-screen">
-      <CardContainer />
+      <div className="flex justify-center pt-8">
+        {
+          Array(4).fill(0).map((_val, index) => {
+            return <LevelButton key={index} index={index} filters={filters} setFilters={setFilters} />
+          })
+        }
+      </div>
+      <CardContainer filters={filters} />
     </main>
   );
 }

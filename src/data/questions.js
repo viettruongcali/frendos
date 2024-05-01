@@ -31,7 +31,7 @@ const questions = [
         "note": ""
     },
     {
-        "question": "Share an embarrassing story that just won't leave your memory no matter how much you try. You know, the moments that keep you up at night because you cringe every time you think about it and you're like \"omg why did I do that.\"",
+        "question": "Share an embarrassing story that just won't leave your memory no matter how much you try.",
         "level": 1,
         "note": ""
     },
@@ -58,7 +58,7 @@ const questions = [
     {
         "question": "What are you grateful for today?",
         "level": 2,
-        "note": ""
+        "note": "Psalm 107:8 Let them thank the Lord for his steadfast love, for his wondrous works to the children of man! "
     },
     {
         "question": "Who are your role models?",
@@ -113,7 +113,7 @@ const questions = [
     {
         "question": "How do you become vulnerable with someone? What actions, circumstances, traits, words \"earn\" your trust?",
         "level": 2,
-        "note": ""
+        "note": "Galatians 6:2 Bear one another's burdens, and so fulfill the law of Christ"
     },
     {
         "question": "Are you missing anyone right now? What about them?",
@@ -181,7 +181,7 @@ const questions = [
         "note": ""
     },
     {
-        "question": "Do you ever feel lonely? when? where is God in your loneliness?",
+        "question": "Do you ever feel lonely? When are you prone to feeling lonely? Where is God in your loneliness?",
         "level": 2,
         "note": ""
     },
@@ -233,7 +233,7 @@ const questions = [
     {
         "question": "What draws you to be friends with someone?",
         "level": 2,
-        "note": ""
+        "note": "Proverbs 17:17 A friend loves at all times, and a brother is born for adversity."
     },
     {
         "question": "What is one regret you have? What do you think God has to say about that regret?",
@@ -254,7 +254,7 @@ const questions = [
     {
         "question": "How can I pray for you?",
         "level": 3,
-        "note": ""
+        "note": "Colossians 4:2 Continue steadfastly in prayer."
     },
     {
         "question": "How do you struggle with the fear of man?",
@@ -355,7 +355,7 @@ const questions = [
     {
         "question": "How much is enough money?",
         "level": 4,
-        "note": ""
+        "note": "Matthew 6:24 You cannot serve God and money."
     },
     {
         "question": "What is \"the good life?\"",
@@ -405,7 +405,7 @@ const questions = [
     {
         "question": "What is the line between sharing with someone about a hard relationship in your life and gossip? How do you define gossip?",
         "level": 4,
-        "note": ""
+        "note": "Ephesians 4:29"
     }
 ]
 
