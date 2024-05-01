@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import questions, { convertToJson } from '../../data/questions';
 import Card from './Card';
 import DefaultCard from './DefaultCard';
@@ -7,42 +7,64 @@ import { CardType } from './type';
 
 const CardContainer = () => {
     const getRandomCard = () => {
-        return questions[Math.floor(Math.random() * questions.length)]
+        if (deckRef.current == deck.length - 1) {
+            return { question: "", level: null, note: "" };
+        }
+        const rand = deck[deckRef.current];
+        deckRef.current = deckRef.current + 1;
+        return rand;
     }
 
     const generateNewCard = () => {
-        setCards([...cards, getRandomCard()])
+        setCards([...cards, getRandomCard()]);
     }
 
     const topDeck = (topCard: CardType) => {
-        const list = [...cards.filter((card: CardType, index: number) =>
-            card.question !== topCard.question
-        ), topCard];
+        const list = [...cards.filter((card: any, index: number) => {
+            return card.question !== topCard.question
+        }), topCard];
         setTopIndex(list.length - 1);
         setCards(list);
     }
 
-    const [cards, setCards] = useState([getRandomCard()]);
+    const shuffle = (array: object[]) => {
+        let currentIndex = array.length;
+
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+
+            // Pick a remaining element...
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+    }
+
+    const deck = shuffle(questions);
+    const deckRef = useRef(0);
+    const [cards, setCards] = useState([deck[0]]);
     const [topIndex, setTopIndex] = useState(0);
 
     return (
         <div className="p-4 sm:p-0 mt-8">
             <div className="w-100 flex justify-center relative ">
-                {/* <DefaultCard index={0} />
-        <DefaultCard index={1} />
-        <DefaultCard index={2} />
-        <DefaultCard index={3} /> */}
                 {
-                    cards.map((card, index) => {
-                        return (
-                            <Card
-                                card={{ ...card, index: index }}
-                                topDeck={topDeck}
-                                generateNewCard={generateNewCard}
-                                setTopIndex={setTopIndex}
-                                topIndex={topIndex}
-                                key={index}
-                            />);
+                    cards.map((card: any, index) => {
+                        if (card.question)
+                            return (
+                                <Card
+                                    card={{ ...card, index: index }}
+                                    topDeck={topDeck}
+                                    generateNewCard={generateNewCard}
+                                    setTopIndex={setTopIndex}
+                                    topIndex={topIndex}
+                                    key={index}
+                                />);
                     })
                 }
             </div>

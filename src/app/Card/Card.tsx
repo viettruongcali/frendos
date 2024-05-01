@@ -19,11 +19,11 @@ const Card = ({ card, generateNewCard, setTopIndex, topIndex, topDeck }:
     //     "rotate-[16deg] translate-x-24",
     // ]
 
-    const discardedStyles = `translate-y-full scale-50 hover:scale-25 sm:hover:z-50 ${topIndex - 1=== card?.index ? `shadow-xl` : ''}`
+    const discardedStyles = `translate-y-full scale-50 hover:scale-25 sm:hover:z-50 ${topIndex - 1 === card?.index ? `shadow-xl` : ''}`
 
     const handleClick = () => {
         if (!discarded) {
-            generateNewCard()
+            generateNewCard();
             setDiscarded(true);
             setTopIndex(topIndex + 1);
         }
