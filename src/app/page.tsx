@@ -6,7 +6,11 @@ import { useState } from 'react';
 const karla = Raleway({ subsets: ['latin'] });
 
 export default function Home() {
-  const [filters, setFilters] = useState([false, false, false, false]);
+  const filterObject = {
+    on: false,
+    filled: false,
+  }
+  const [filters, setFilters] = useState([filterObject, filterObject, filterObject, filterObject]);
 
   return (
     <main className="min-h-screen">
@@ -17,7 +21,7 @@ export default function Home() {
           })
         }
       </div>
-      <CardContainer filters={filters} />
+      <CardContainer filters={filters} setFilters={setFilters} />
     </main>
   );
 }

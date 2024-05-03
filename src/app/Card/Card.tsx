@@ -23,7 +23,7 @@ const Card = ({ card, generateNewCard, setTopIndex, topIndex, topDeck }:
 
     const handleClick = () => {
         if (!discarded) {
-            generateNewCard();
+            if (topIndex == card.index) generateNewCard();
             setDiscarded(true);
             setTopIndex(topIndex + 1);
         }
